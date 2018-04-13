@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <StackPanel>
+            <TextBox/>
+            <TextBox/>
+            <Button Content="Sum" Height="20"/>
+        </StackPanel>
     </Grid>
 </Window>
