@@ -8,9 +8,9 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel>
-            <TextBox Name="TxtNum1" Background="LightPink" TextChanged="TextChangedEvent"/>
-            <TextBox Name="TxtNum2" Background="LightPink" TextChanged="TextChangedEvent"/>
-            <Button Name="BtnSum" Content="Sum" Height="20" IsEnabled="false" Click="BtnSum_Click"/>
+            <TextBox/>
+            <TextBox/>
+            <Button Content="Sum" Height="20"/>
         </StackPanel>
     </Grid>
 </Window>
