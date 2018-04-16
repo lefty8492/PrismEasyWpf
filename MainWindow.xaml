@@ -8,8 +8,8 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <StackPanel>
-            <TextBox Text="{Binding x, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Text="{Binding x, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <TextBox Text="{Binding X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
             <Button Content="Sum" Height="20"/>
         </StackPanel>
     </Grid>
