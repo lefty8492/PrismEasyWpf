@@ -8,5 +8,21 @@ using System.ComponentModel;
 namespace PrismEasyWpf {
 	class ViewModel : INotifyPropertyChanged {
 		public event PropertyChangedEventHandler PropertyChanged;
+
+		double _x = 0;
+
+		public double x {
+			get {
+				return _x;
+			}
+
+			set {
+				_x = value;
+				
+				if (PropertyChanged != null) {
+					PropertyChanged(this, new PropertyChangedEventArgs("x"));
+				}
+			}
+		}
 	}
 }
