@@ -11,16 +11,16 @@ namespace PrismEasyWpf {
 
 		double _x = 0;
 
-		public double x {
+		public double X {
 			get {
 				return _x;
 			}
 
 			set {
 				_x = value;
-				
+
 				if (PropertyChanged != null) {
-					PropertyChanged(this, new PropertyChangedEventArgs("x"));
+					PropertyChanged(this, new PropertyChangedEventArgs("X"));
 				}
 			}
 		}
