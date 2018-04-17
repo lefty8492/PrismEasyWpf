@@ -11,22 +11,24 @@ namespace PrismEasyWpf {
 
 		public string Error {
 			get {
-				return (X < 0) ? "Value is not positive." : null;
+				double d;
+				return (!double.TryParse(X, out d)) ? "Value is not double." : null;
 			}
 		}
 
 		public string this[string columnName] {
 			get {
+				double d;
 				switch (columnName) {
-				case "X": return (X < 0) ? "Value is not positive." : null;
+				case "X": return (!double.TryParse(X, out d)) ? "Value is not double." : null;
 				}
 				return null;
 			}
 		}
 
-		double _x = 0;
+		string _x = "0";
 
-		public double X {
+		public string X {
 			get {
 				return _x;
 			}
