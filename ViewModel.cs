@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace PrismEasyWpf {
 	class ViewModel : INotifyPropertyChanged, IDataErrorInfo {
@@ -39,6 +40,18 @@ namespace PrismEasyWpf {
 				if (PropertyChanged != null) {
 					PropertyChanged(this, new PropertyChangedEventArgs("X"));
 				}
+			}
+		}
+
+		private class Command : ICommand {
+			public event EventHandler CanExecuteChanged;
+
+			public bool CanExecute(object parameter) {
+				throw new NotImplementedException();
+			}
+
+			public void Execute(object parameter) {
+				throw new NotImplementedException();
 			}
 		}
 	}
