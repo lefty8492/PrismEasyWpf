@@ -44,14 +44,24 @@ namespace PrismEasyWpf {
 		}
 
 		private class Command : ICommand {
-			public event EventHandler CanExecuteChanged;
+			private Action<object> _Command;
+			private Func<object, bool> _CanExecute;
+
+			public event EventHandler CanExecuteChanged {
+				add { CommandManager.RequerySuggested += value; }
+				remove { CommandManager.RequerySuggested -= value; }
+			}
 
 			public bool CanExecute(object parameter) {
-				throw new NotImplementedException();
+				if (_CanExecute != null) {
+					return _CanExecute(parameter);
+				} else {
+					return true;
+				}
 			}
 
 			public void Execute(object parameter) {
-				throw new NotImplementedException();
+				_Command(parameter);
 			}
 		}
 	}
