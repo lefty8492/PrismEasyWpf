@@ -10,7 +10,7 @@
         <StackPanel>
             <TextBox Text="{Binding X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
             <TextBox Text="{Binding X, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
-            <Button Content="Sum" Height="20"/>
+            <Button Content="Sum" Height="20" Command="{Binding SumCommand}"/>
         </StackPanel>
     </Grid>
 </Window>
