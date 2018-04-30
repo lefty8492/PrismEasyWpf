@@ -47,6 +47,15 @@ namespace PrismEasyWpf {
 			private Action<object> _Command;
 			private Func<object, bool> _CanExecute;
 
+			public Command(Action<object> command, Func<object, bool> canExecute = null) {
+				if (command == null) {
+					throw new ArgumentException();
+				}
+
+				_Command = command;
+				_CanExecute = canExecute;
+			}
+
 			public event EventHandler CanExecuteChanged {
 				add { CommandManager.RequerySuggested += value; }
 				remove { CommandManager.RequerySuggested -= value; }
