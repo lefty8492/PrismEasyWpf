@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Input;
+using System.Windows;
 
 namespace PrismEasyWpf {
 	class ViewModel : INotifyPropertyChanged, IDataErrorInfo {
@@ -73,5 +74,13 @@ namespace PrismEasyWpf {
 				_Command(parameter);
 			}
 		}
+
+		public ICommand SumCommand {get; private set; }
+
+		public ViewModel() {
+			X = "0";
+			SumCommand = new Command(v => { MessageBox.Show((double.Parse(X) * 2).ToString()); });
+		}
+
 	}
 }
